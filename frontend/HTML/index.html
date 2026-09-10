@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest-Find your next favorite book</title>
+    <!-- ==================style sheets======================= -->
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <!--==========navigation of the page(shared in every page)============= -->
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="#">BookNest</a>
+        <nav class="main-nav">
+          <a class="is-active" href="#">BrowseBooks</a>
+          <a href="#">Add a book</a>
+        </nav>
+      </div>
+    </header>
+    <main class="site-main">
+      <!--======================== Hero of the page ========================-->
+      <section class="hero">
+        <div class="hero-inner">
+          <h1>Find your next favourite book</h1>
+          <p class="hero-tagline">
+            Search the catalogue by title or author, filter by genre, and open
+            any book to see the full details — or edit and remove it.
+          </p>
+          <a class="btn btn-primary btn-pill" href="#">+Add a book</a>
+        </div>
+      </section>
+      <!--======================== Search & Grid ========================-->
+      <section class="page-section">
+        <div class="container">
+          <!--================= The catalogue heading ========================-->
+          <div class="section-head">
+            <h2>The catalogue</h2>
+            <p class="result-count" id="result-count">Showing 16 books</p>
+          </div>
+          <!--==================== search + filtering =======================-->
+          <div class="toolbar">
+            <div class="toolbar-field toolbar-search">
+              <label class="feild-lable" for="search-input">search</label>
+              <input
+                class="input"
+                id="search-input"
+                type="search"
+                placeholder="Search by title or author..."
+              />
+            </div>
+            <div class="toolbar-field toolbar-gener">
+              <label class="field-lable" for="genre-select">Genre</label>
+              <select id="genre-select" class="select">
+                <option value>All Genres</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Biography">Biography</option>
+                <option value="History">History</option>
+                <option value="Self-Help">Self-Help</option>
+                <option value="Romance">Romance</option>
+              </select>
+            </div>
+          </div>
+          <div class="book-grid" id="book-grid"></div>
+        </div>
+      </section>
+    </main>
+    <!--======================== footer of the page (shared in every page) ========================-->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-brand">BookNest</p>
+            <p>Curating a quiet corner of the internet for people who read.</p>
+            <p class="footer-note">&copy; 2026 BookNest. A teaching project.</p>
+          </div>
+          <div>
+            <h2 class="footer-heading">Navigate</h2>
+            <div class="footer-links">
+              <a href="">Browse Books</a>
+              <a href="">Add a Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--======================== scripts ========================-->
+    <script src=""></script>
+    <script src=""></script>
+    <script src="index.js"></script>
+  </body>
+</html>
