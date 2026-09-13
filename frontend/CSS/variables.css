@@ -1,0 +1,51 @@
+:root {
+  /* ---- Palette: a warm "independent bookshop" scheme -------------------- */
+  --color-bg: #faf5ec; /* paper — the page background */
+  --color-surface: #ffffff; /* cards sit slightly above the paper */
+  --color-surface-soft: #f8f3ea; /* tinted bands (footer, feature strip) */
+  --color-text: #1d1c16; /* ink — softer than pure black */
+  --color-muted: #414943; /* secondary text */
+  --color-accent: #285943; /* forest green — buttons and links */
+  --color-accent-dark: #0c412d; /* the hover/pressed version */
+  --color-accent-soft: #d7e9df; /* pale green wash */
+  --color-gold: #9a7420; /* muted gold — ratings and genre tags */
+  --color-gold-soft: #f5e6c4; /* the gold at low strength */
+  --color-border: #e7e0d3; /* hairline borders */
+  --color-error: #ba1a1a;
+  --color-error-bg: #ffdad6;
+  --color-success: #1e4f3a;
+  --color-success-bg: #d7e9df;
+
+  /* ---- Spacing scale ---------------------------------------------------
+     Everything is a multiple of 4px, so the layout keeps a steady rhythm. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+
+  /* ---- Corner radius --------------------------------------------------- */
+  --radius-sm: 0.25rem; 
+  --radius: 0.5rem; 
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem; 
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px; 
+
+  /* ---- Shadows --------------------------------------------------------- */
+  --shadow-soft: 0 4px 20px rgba(36, 33, 28, 0.05);
+  --shadow-lift: 0 12px 28px rgba(36, 33, 28, 0.12);
+  --shadow-cover:
+    0 12px 24px -4px rgba(36, 33, 28, 0.15),
+    0 4px 8px -2px rgba(36, 33, 28, 0.05);
+
+  /* ---- Typography ------------------------------------------------------ */
+  --font-display: "Literata", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* ---- Layout ---------------------------------------------------------- */
+  --container-max: 1120px; 
+  --header-height: 64px;
+}

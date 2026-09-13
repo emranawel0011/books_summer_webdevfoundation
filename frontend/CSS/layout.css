@@ -1,0 +1,214 @@
+/* ==========================================================================
+  header, nav, containers, footer,and the two page-level grids.
+   ========================================================================== */
+
+/* ---- The centred container ----------------------------------------------*/
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-3); 
+}
+
+/* ---- Sticky header ------------------------------------------------------
+   POSITIONING: `sticky` behaves like a normal element until you scroll past
+   it, then it "sticks" to the offset you give it (top: 0). It needs BOTH a
+   position and an offset to work.
+
+   z-index controls stacking order: higher numbers paint on top. Without it,
+   cards scrolling underneath would cover the header. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(254, 249, 240, 0.92);
+  /* Blurs whatever scrolls underneath, so the bar reads as frosted glass.
+     Browsers that don't support it simply show the solid colour above. */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header .container {
+  /* FLEXBOX: lay the children out in a row.
+     justify-content spreads them along the main (horizontal) axis;
+     align-items centres them on the cross (vertical) axis. */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: var(--header-height);
+  flex-wrap: wrap;
+  padding-block: var(--space-2);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: -0.01em;
+}
+
+.brand:hover {
+  text-decoration: none;
+  color: var(--color-accent-dark);
+}
+
+/* The nav is a Flexbox row too. On mobile it wraps onto its own line;
+   responsive.css sits it beside the logo on wider screens. */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* CHILD COMBINATOR (>): only links that are a DIRECT child of .main-nav.
+   A descendant selector (a space) would also catch links nested deeper. */
+.main-nav > a {
+  color: var(--color-muted);
+  font-size: 0.875rem;      /* 14px */
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding-bottom: var(--space-1);
+  border-bottom: 2px solid transparent;  /* reserved space, invisible now */
+}
+
+.main-nav > a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom-color: var(--color-border);
+}
+
+/* The current page gets a permanent green underline. The class is added in
+   the HTML of each page. */
+.main-nav > a.is-active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ---- Page scaffolding --------------------------------------------------- */
+.site-main {
+  /* flex: 1 lets <main> grow to fill the leftover height, which pushes the
+     footer to the bottom of short pages. */
+  flex: 1;
+}
+
+.page-section {
+  padding-block: var(--space-6);
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+/* A short accent rule under every section heading. ::after invents the box,
+   and `content: ""` is what makes it appear at all. */
+.section-head h2 {
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.section-head h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+}
+
+/* When the heading is centred, centre its rule too. */
+.section-head-center h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* A tinted full-width band, used for "Why BookNest". */
+.band {
+  background-color: var(--color-surface-soft);
+  border-block: 1px solid var(--color-border);
+  padding-block: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+/* ---- CSS GRID: the book grid -------------------------------------------
+   repeat(auto-fill, minmax(220px, 1fr)) means:
+     "fit as many columns as you can, each at least 220px wide, and share the
+      leftover space equally (1fr = one fraction of what's left)."
+
+   The browser recalculates the column count as the window resizes, so this
+   one line replaces several media queries. */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+/* The three feature columns on Home and About. */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;    /* single column on mobile */
+  gap: var(--space-5);
+}
+
+/* ---- Footer -------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-surface-soft);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-6);
+  margin-top: auto;   /* the other half of the sticky-footer trick */
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+.footer-heading {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;    /* shout it in small caps */
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-links a {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+
+.footer-links a:hover {
+  color: var(--color-gold);
+}
+
+.footer-note {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin-top: var(--space-4);
+}
