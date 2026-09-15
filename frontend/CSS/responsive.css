@@ -1,0 +1,211 @@
+/* ==========================================================================
+
+   THE FOUR BREAKPOINTS
+   --------------------
+     (none)    320px+   phones. This is the default, written elsewhere.
+     480px     large phones and small tablets in portrait.
+     768px     tablets. The layout stops stacking and starts sitting side by side.
+     1024px    laptops and desktops. Full multi-column layout.
+     1280px    large monitors. Only typography and breathing room change.
+
+   480px and up — large phones
+   Slightly bigger type, slightly wider gutters. Still one column.
+   ========================================================================== */
+@media (min-width: 480px) {
+  .container {
+    padding-inline: var(--space-4);
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.125rem;
+  }
+
+  .book-card {
+    padding: var(--space-4);
+  }
+
+  /* Two feature columns fit comfortably from here. */
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-title {
+    font-size: 2.25rem;
+  }
+}
+
+
+/* ==========================================================================
+   768px and up — tablets
+   The big structural change: side-by-side layouts replace the stack.
+   ========================================================================== */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .site-header .container {
+    flex-wrap: nowrap;
+  }
+
+  .main-nav {
+    gap: var(--space-4);
+  }
+
+  .hero {
+    min-height: 64vh;
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .toolbar {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .toolbar-search {
+    flex: 2;
+  }
+
+  .toolbar-genre {
+    flex: 1;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .detail-layout {
+    grid-template-columns: minmax(220px, 1fr) 2fr;
+    gap: var(--space-5);
+  }
+
+  .detail-cover {
+    margin-inline: 0;      
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+    align-items: start;
+  }
+
+  .about-hero {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+    align-items: center;
+  }
+
+  .pull-quote blockquote {
+    font-size: 1.75rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+
+/* ===============   1024px and up — laptops and desktops  ================ */
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--space-5);      
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .page-section {
+    padding-block: var(--space-7);
+  }
+
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1875rem;
+  }
+
+  .main-nav {
+    gap: var(--space-5);
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .book-grid {
+    gap: var(--space-5);
+  }
+
+  .detail-layout {
+    grid-template-columns: minmax(260px, 1fr) 2fr;
+    gap: var(--space-6);
+  }
+
+  .contact-layout {
+    gap: var(--space-6);
+  }
+
+  .about-hero {
+    gap: var(--space-6);
+  }
+
+  .panel {
+    padding: var(--space-6);
+  }
+
+  .pull-quote blockquote {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+
+  .hero {
+    min-height: 74vh;
+  }
+
+  .page-section {
+    padding-block: 80px;
+  }
+
+  .detail-title {
+    font-size: 3rem;
+  }
+}
+

@@ -1,157 +1,245 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add a Book — BookNest</title>
-  <meta name="description" content="Add a new book to the BookNest catalogue." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a Book — BookNest</title>
+    <meta
+      name="description"
+      content="Add a new book to the BookNest catalogue."
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:wght@600;700&display=swap"
-    rel="stylesheet"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href="../images/icon/add.png"
+      type="image/x-icon"
+    />
 
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">BookNest</a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html">Browse Books</a>
-        <a class="is-active" href="add-book.html">Add a Book</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="site-main">
-    <section class="page-section">
-      <div class="container measure">
-
-        <div class="section-head">
-          <h1>Add a new book</h1>
-        </div>
-
-        <div class="panel">
-          <p class="form-message is-hidden" id="form-message"></p>
-
-          <form id="book-form" novalidate>
-            <div class="form-grid">
-
-              <div class="form-field">
-                <label class="form-label" for="title-input">Title</label>
-                <input class="input" type="text" id="title-input" placeholder="The Midnight Library" />
-                <span class="field-error" id="title-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="author-input">Author</label>
-                <input class="input" type="text" id="author-input" placeholder="Matt Haig" />
-                <span class="field-error" id="author-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="genre-input">Genre</label>
-                <select class="select" id="genre-input">
-                  <option value="">Choose one…</option>
-                  <option value="Fiction">Fiction</option>
-                  <option value="Mystery">Mystery</option>
-                  <option value="Sci-Fi">Sci-Fi</option>
-                  <option value="Fantasy">Fantasy</option>
-                  <option value="Biography">Biography</option>
-                  <option value="History">History</option>
-                  <option value="Self-Help">Self-Help</option>
-                  <option value="Romance">Romance</option>
-                </select>
-                <span class="field-error" id="genre-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="year-input">Year published <span class="field-label">(optional)</span></label>
-                <input class="input" type="number" id="year-input" placeholder="2020" />
-                <span class="field-error" id="year-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="rating-input">Rating out of 5 <span class="field-label">(optional)</span></label>
-                <input class="input" type="number" id="rating-input" min="0" max="5" step="0.1" placeholder="4.2" />
-                <span class="field-error" id="rating-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="price-input">Price ($) <span class="field-label">(optional)</span></label>
-                <input class="input" type="number" id="price-input" min="0" step="0.01" placeholder="12.99" />
-                <span class="field-error" id="price-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="pages-input">Pages <span class="field-label">(optional)</span></label>
-                <input class="input" type="number" id="pages-input" min="1" step="1" placeholder="304" />
-                <span class="field-error" id="pages-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="language-input">Language <span class="field-label">(optional)</span></label>
-                <input class="input" type="text" id="language-input" placeholder="English" />
-                <span class="field-error" id="language-error"></span>
-              </div>
-
-              <div class="form-field span-2">
-                <label class="form-label" for="cover-input">Cover image URL <span class="field-label">(optional)</span></label>
-                <input class="input" type="url" id="cover-input" placeholder="https://images.example.com/cover.jpg" />
-                <span class="field-label">Tip: try <a href="https://picsum.photos" target="_blank" rel="noopener">picsum.photos</a> for a free placeholder. Left blank, a default cover is used.</span>
-                <span class="field-error" id="cover-error"></span>
-              </div>
-
-              <div class="form-field span-2">
-                <label class="form-label" for="description-input">Description</label>
-                <textarea class="textarea" id="description-input" rows="4" placeholder="What is this book about?"></textarea>
-                <span class="field-error" id="description-error"></span>
-              </div>
-
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary" id="submit-btn">Add book</button>
-              <a class="btn btn-outline" href="index.html">Cancel</a>
-            </div>
-          </form>
-        </div>
-
+    <link rel="stylesheet" href="../CSS/variables.css" />
+    <link rel="stylesheet" href="../CSS/base.css" />
+    <link rel="stylesheet" href="../CSS/layout.css" />
+    <link rel="stylesheet" href="../CSS/components.css" />
+    <link rel="stylesheet" href="../CSS/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">BookNest</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Browse Books</a>
+          <a class="is-active" href="add-book.html">Add a Book</a>
+        </nav>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <p class="footer-brand">BookNest</p>
-          <p>Curating a quiet corner of the internet for people who read.</p>
-          <p class="footer-note">© 2026 BookNest. A teaching project.</p>
+    <main class="site-main">
+      <section class="page-section">
+        <div class="container measure">
+          <div class="section-head">
+            <h1>Add a new book</h1>
+          </div>
+
+          <div class="panel">
+            <p class="form-message is-hidden" id="form-message"></p>
+
+            <form id="book-form" novalidate>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="title-input">Title</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="title-input"
+                    placeholder="The little hacker"
+                  />
+                  <span class="field-error" id="title-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="author-input">Author</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="author-input"
+                    placeholder="Saron getahun"
+                  />
+                  <span class="field-error" id="author-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="genre-input">Genre</label>
+                  <select class="select" id="genre-input">
+                    <option value="">Choose one…</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Biography">Biography</option>
+                    <option value="History">History</option>
+                    <option value="Self-Help">Self-Help</option>
+                    <option value="Romance">Romance</option>
+                  </select>
+                  <span class="field-error" id="genre-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="year-input"
+                    >Year published
+                    <span class="field-label">(optional)</span></label
+                  >
+                  <input
+                    class="input"
+                    type="number"
+                    id="year-input"
+                    placeholder="2020"
+                  />
+                  <span class="field-error" id="year-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="rating-input"
+                    >Rating out of 5
+                    <span class="field-label">(optional)</span></label
+                  >
+                  <input
+                    class="input"
+                    type="number"
+                    id="rating-input"
+                    min="0"
+                    max="5"
+                    step="0.1"
+                    placeholder="4.5"
+                  />
+                  <span class="field-error" id="rating-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="price-input"
+                    >Price ($)
+                    <span class="field-label">(optional)</span></label
+                  >
+                  <input
+                    class="input"
+                    type="number"
+                    id="price-input"
+                    min="0"
+                    step="0.01"
+                    placeholder="120.99"
+                  />
+                  <span class="field-error" id="price-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="pages-input"
+                    >Pages <span class="field-label">(optional)</span></label
+                  >
+                  <input
+                    class="input"
+                    type="number"
+                    id="pages-input"
+                    min="1"
+                    step="1"
+                    placeholder="304"
+                  />
+                  <span class="field-error" id="pages-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="language-input"
+                    >Language <span class="field-label">(optional)</span></label
+                  >
+                  <input
+                    class="input"
+                    type="text"
+                    id="language-input"
+                    placeholder="Arebic"
+                  />
+                  <span class="field-error" id="language-error"></span>
+                </div>
+
+                <div class="form-field span-2">
+                  <label class="form-label" for="cover-input"
+                    >Cover image URL
+                    <span class="field-label">(optional)</span></label
+                  >
+                  <input
+                    class="input"
+                    type="url"
+                    id="cover-input"
+                    placeholder="https://images.example.com/cover.jpg"
+                  />
+                  <span class="field-label"
+                    >Tip: try
+                    <a
+                      href="https://picsum.photos"
+                      target="_blank"
+                      rel="noopener"
+                      >picsum.photos</a
+                    >
+                    for a free placeholder. Left blank, a default cover is
+                    used.</span
+                  >
+                  <span class="field-error" id="cover-error"></span>
+                </div>
+
+                <div class="form-field span-2">
+                  <label class="form-label" for="description-input"
+                    >Description</label
+                  >
+                  <textarea
+                    class="textarea"
+                    id="description-input"
+                    rows="4"
+                    placeholder="Write about your book…"
+                  ></textarea>
+                  <span class="field-error" id="description-error"></span>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="submit-btn">
+                  Add book
+                </button>
+                <a class="btn btn-outline" href="index.html">Cancel</a>
+              </div>
+            </form>
+          </div>
         </div>
+      </section>
+    </main>
 
-        <div>
-          <h2 class="footer-heading">Navigate</h2>
-          <div class="footer-links">
-            <a href="index.html">Browse Books</a>
-            <a href="add-book.html">Add a Book</a>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-brand">BookNest</p>
+            <p>Curating a quiet corner of the internet for people who read.</p>
+            <p class="footer-note">
+              © 2026 BookNest. A teaching project by Emran Awel &amp; Saron
+              Getahun.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="footer-heading">Navigate</h2>
+            <div class="footer-links">
+              <a href="index.html">Browse Books</a>
+              <a href="add-book.html">Add a Book</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/add-book.js"></script>
-</body>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/add-book.js"></script>
+  </body>
 </html>

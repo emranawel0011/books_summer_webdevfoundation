@@ -13,7 +13,7 @@
   --color-border: #e7e0d3; /* hairline borders */
   --color-error: #ba1a1a;
   --color-error-bg: #ffdad6;
-  --color-success: #1e4f3a;
+  --color-success: #1e4f25;
   --color-success-bg: #d7e9df;
 
   /* ---- Spacing scale ---------------------------------------------------
@@ -27,7 +27,7 @@
   --space-7: 64px;
 
   /* ---- Corner radius --------------------------------------------------- */
-  --radius-sm: 0.25rem; 
+  --radius-sm: 0.25rem;
   --radius: 0.5rem; 
   --radius-md: 0.75rem;
   --radius-lg: 1rem; 
@@ -44,6 +44,7 @@
   /* ---- Typography ------------------------------------------------------ */
   --font-display: "Literata", Georgia, "Times New Roman", serif;
   --font-body: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-p1: "Lobster Two", sans-serif;
 
   /* ---- Layout ---------------------------------------------------------- */
   --container-max: 1120px; 

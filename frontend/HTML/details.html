@@ -1,160 +1,208 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book details — BookNest</title>
-  <meta name="description" content="View, edit, or remove one book in the BookNest catalogue." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book details — BookNest</title>
+    <meta
+      name="description"
+      content="View, edit, or remove one book in the BookNest catalogue."
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:wght@600;700&display=swap"
-    rel="stylesheet"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href="../images/icon/open-book.png"
+      type="image/x-icon"
+    />
 
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">BookNest</a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a class="is-active" href="index.html">Browse Books</a>
-        <a href="add-book.html">Add a Book</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="site-main">
-    <section class="page-section">
+    <link rel="stylesheet" href="../CSS/variables.css" />
+    <link rel="stylesheet" href="../CSS/base.css" />
+    <link rel="stylesheet" href="../CSS/layout.css" />
+    <link rel="stylesheet" href="../CSS/components.css" />
+    <link rel="stylesheet" href="../CSS/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
       <div class="container">
-
-        <a class="back-link" href="index.html">← Back to all books</a>
-
-        <p class="form-message form-message-success is-hidden" id="success-banner"></p>
-
-            <!-- here where the book details will be rendered by ?id i think -->
-        <div id="book-detail"></div>
-
-        <!-- ============================ EDIT MODE ============================ -->
-        <div id="edit-panel" class="panel is-hidden">
-          <h2>Edit book</h2>
-          <p class="form-message is-hidden" id="edit-message"></p>
-
-          <form id="edit-form" novalidate>
-            <div class="form-grid">
-
-              <div class="form-field">
-                <label class="form-label" for="edit-title">Title</label>
-                <input class="input" type="text" id="edit-title" />
-                <span class="field-error" id="title-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="edit-author">Author</label>
-                <input class="input" type="text" id="edit-author" />
-                <span class="field-error" id="author-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="edit-genre">Genre</label>
-                <select class="select" id="edit-genre">
-                  <option value="Fiction">Fiction</option>
-                  <option value="Mystery">Mystery</option>
-                  <option value="Sci-Fi">Sci-Fi</option>
-                  <option value="Fantasy">Fantasy</option>
-                  <option value="Biography">Biography</option>
-                  <option value="History">History</option>
-                  <option value="Self-Help">Self-Help</option>
-                  <option value="Romance">Romance</option>
-                </select>
-                <span class="field-error" id="genre-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="edit-year">Year published</label>
-                <input class="input" type="number" id="edit-year" />
-                <span class="field-error" id="year-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="edit-rating">Rating out of 5</label>
-                <input class="input" type="number" id="edit-rating" min="0" max="5" step="0.1" />
-                <span class="field-error" id="rating-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="edit-price">Price ($)</label>
-                <input class="input" type="number" id="edit-price" min="0" step="0.01" />
-                <span class="field-error" id="price-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="edit-pages">Pages</label>
-                <input class="input" type="number" id="edit-pages" min="1" step="1" />
-                <span class="field-error" id="pages-error"></span>
-              </div>
-
-              <div class="form-field">
-                <label class="form-label" for="edit-language">Language</label>
-                <input class="input" type="text" id="edit-language" />
-                <span class="field-error" id="language-error"></span>
-              </div>
-
-              <div class="form-field span-2">
-                <label class="form-label" for="edit-cover">Cover image URL</label>
-                <input class="input" type="url" id="edit-cover" />
-                <span class="field-error" id="cover-error"></span>
-              </div>
-
-              <div class="form-field span-2">
-                <label class="form-label" for="edit-description">Description</label>
-                <textarea class="textarea" id="edit-description" rows="4"></textarea>
-                <span class="field-error" id="description-error"></span>
-              </div>
-
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary" id="save-btn">Save changes</button>
-              <button type="button" class="btn btn-outline" id="cancel-edit-btn">Cancel</button>
-            </div>
-          </form>
-        </div>
-
+        <a class="brand" href="index.html">BookNest</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="is-active" href="index.html">Browse Books</a>
+          <a href="add-book.html">Add a Book</a>
+        </nav>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <p class="footer-brand">BookNest</p>
-          <p>Curating a quiet corner of the internet for people who read.</p>
-          <p class="footer-note">© 2026 BookNest. A teaching project.</p>
+    <main class="site-main">
+      <section class="page-section">
+        <div class="container">
+          <a class="back-link" href="index.html">← Back to all books</a>
+
+          <p
+            class="form-message form-message-success is-hidden"
+            id="success-banner"
+          ></p>
+
+          <!-- here where the book details will be rendered by ?id i think -->
+          <div id="book-detail"></div>
+
+          <!-- ============================ EDIT MODE ============================ -->
+          <div id="edit-panel" class="panel is-hidden">
+            <h2>Edit book</h2>
+            <p class="form-message is-hidden" id="edit-message"></p>
+
+            <form id="edit-form" novalidate>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="edit-title">Title</label>
+                  <input class="input" type="text" id="edit-title" />
+                  <span class="field-error" id="title-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="edit-author">Author</label>
+                  <input class="input" type="text" id="edit-author" />
+                  <span class="field-error" id="author-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="edit-genre">Genre</label>
+                  <select class="select" id="edit-genre">
+                    <option value="Fiction">Fiction</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Biography">Biography</option>
+                    <option value="History">History</option>
+                    <option value="Self-Help">Self-Help</option>
+                    <option value="Romance">Romance</option>
+                  </select>
+                  <span class="field-error" id="genre-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="edit-year"
+                    >Year published</label
+                  >
+                  <input class="input" type="number" id="edit-year" />
+                  <span class="field-error" id="year-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="edit-rating"
+                    >Rating out of 5</label
+                  >
+                  <input
+                    class="input"
+                    type="number"
+                    id="edit-rating"
+                    min="0"
+                    max="5"
+                    step="0.1"
+                  />
+                  <span class="field-error" id="rating-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="edit-price">Price ($)</label>
+                  <input
+                    class="input"
+                    type="number"
+                    id="edit-price"
+                    min="0"
+                    step="0.01"
+                  />
+                  <span class="field-error" id="price-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="edit-pages">Pages</label>
+                  <input
+                    class="input"
+                    type="number"
+                    id="edit-pages"
+                    min="1"
+                    step="1"
+                  />
+                  <span class="field-error" id="pages-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="edit-language">Language</label>
+                  <input class="input" type="text" id="edit-language" />
+                  <span class="field-error" id="language-error"></span>
+                </div>
+
+                <div class="form-field span-2">
+                  <label class="form-label" for="edit-cover"
+                    >Cover image URL</label
+                  >
+                  <input class="input" type="url" id="edit-cover" />
+                  <span class="field-error" id="cover-error"></span>
+                </div>
+
+                <div class="form-field span-2">
+                  <label class="form-label" for="edit-description"
+                    >Description</label
+                  >
+                  <textarea
+                    class="textarea"
+                    id="edit-description"
+                    rows="4"
+                  ></textarea>
+                  <span class="field-error" id="description-error"></span>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="save-btn">
+                  Save changes
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline"
+                  id="cancel-edit-btn"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
+      </section>
+    </main>
 
-        <div>
-          <h2 class="footer-heading">Navigate</h2>
-          <div class="footer-links">
-            <a href="index.html">Browse Books</a>
-            <a href="add-book.html">Add a Book</a>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-brand">BookNest</p>
+            <p>Curating a quiet corner of the internet for people who read.</p>
+            <p class="footer-note">
+              © 2026 BookNest. A teaching project by Emran Awel &amp; Saron
+              Getahun.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="footer-heading">Navigate</h2>
+            <div class="footer-links">
+              <a href="index.html">Browse Books</a>
+              <a href="add-book.html">Add a Book</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/details.js"></script>
-</body>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/details.js"></script>
+  </body>
 </html>
