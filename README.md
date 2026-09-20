@@ -38,7 +38,7 @@ git pull https://github.com/emranawel0011/books_summer_webdevfoundation.git
 A tiny REST API for the BookNest teaching project.
 
 | Types         | Their API: methode and endpoint |
-| ------------- | ------------------------------- |
+| --- | --- |
 | All books     | GET /api/books                  |
 | One book      | GET /api/books/:id              |
 | Genres        | GET /api/genres                 |
