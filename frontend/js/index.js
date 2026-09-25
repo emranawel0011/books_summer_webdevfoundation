@@ -47,7 +47,7 @@ function displayBooks(booksToDisplay) {
             <p class="book-card-author">${book.author}</p>
             <p>${book.genre}</p>
             <div class="book-card-actions">
-              <a href="details.html?id=${book.id}">View Details</a>
+              <a href="./frontend/HTML/details.html?id=${book.id}">View Details</a>
             </div>
           </div>
         </article>
