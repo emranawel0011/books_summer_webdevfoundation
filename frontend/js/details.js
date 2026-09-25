@@ -57,7 +57,7 @@ function showBook(book) {
         src="${getCoverImage(book)}"
         alt="Cover of ${book.title}"
         class="book-detail-image"
-        onerror="this.onerror=null;this.src='../images/covers/placeholder.svg'"
+        onerror="this.onerror=null;this.src='./frontend/images/covers/placeholder.svg'"
       >
 
       <div class="book-detail-info">

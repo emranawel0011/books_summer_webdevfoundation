@@ -42,12 +42,12 @@ function getCoverImage(book) {
   const cover = book && typeof book.cover === "string" ? book.cover.trim() : "";
 
   if (!cover) {
-    return "../images/covers/placeholder.svg";
+    return "./frontend/images/covers/placeholder.svg";
   }
 
   if (/^(?:[a-z][a-z\d+.-]*:|\/)/i.test(cover)) {
     return cover;
   }
 
-  return `../${cover.replace(/^(?:\.\/)+/, "")}`;
+  return `./frontend/${cover.replace(/^(?:\.\/)+/, "")}`;
 }

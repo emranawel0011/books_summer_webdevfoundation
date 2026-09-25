@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest — Find your next favourite book</title>
+    <meta
+      name="description"
+      content="Browse, add, and manage a small book catalogue."
+    />
+
+    <!-- Google Fonts: a display serif for headings, a clean sans for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Yuyu+Short&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="./frontend/images/icon/books-stack-of-three.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="./frontend/CSS/variables.css" />
+    <link rel="stylesheet" href="./frontend/CSS/base.css" />
+    <link rel="stylesheet" href="./frontend/CSS/layout.css" />
+    <link rel="stylesheet" href="./frontend/CSS/components.css" />
+    <link rel="stylesheet" href="./frontend/CSS/responsive.css" />
+  </head>
+  <body>
+    <!-- ===================== HEADER (shared on every page) ===================== -->
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">BookNest</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="is-active" href="index.html">Browse Books</a>
+          <a href="./frontend/HTML/add-book.html">Add a Book</a>
+          <a href="./frontend/HTML/about.html">About Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <!-- ============================= HERO ============================= -->
+      <section class="hero">
+        <div class="hero-inner">
+          <h1>Find your next favourite book</h1>
+          <p class="hero-tagline">
+            Search the catalogue by title or author, filter by genre, and open
+            any book to see the full details — or edit and remove it.
+          </p>
+          <a class="btn btn-primary btn-pill" href="./frontend/HTML/add-book.html">
+            + Add a book
+          </a>
+        </div>
+      </section>
+
+      <!-- ========================== SEARCH + GRID ========================= -->
+      <section class="page-section">
+        <div class="container">
+          <div class="section-head">
+            <h2>The catalogue</h2>
+            <p class="result-count" id="result-count"></p>
+          </div>
+
+          <!-- ===================== SEARCH + FILTER TOOLBAR ==================== -->
+          <div class="toolbar">
+            <div class="toolbar-field toolbar-search">
+              <label class="field-label" for="search-input">Search</label>
+              <input
+                class="input"
+                type="search"
+                id="search-input"
+                placeholder="Search by title or author…"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="toolbar-field toolbar-genre">
+              <label class="field-label" for="genre-select">Genre</label>
+              <!-- index.js adds one <option> per genre from the API.
+                 The empty value means "don't filter by genre at all". -->
+              <select class="select" id="genre-select">
+                <option value="">All genres</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- The CSS Grid the cards land in. index.js fills it. -->
+          <div class="book-grid" id="book-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER (shared on every page) ==================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-brand">BookNest</p>
+            <p>Curating a quiet corner of the internet for people who read.</p>
+            <p class="footer-note">
+              © 2026 BookNest. A teaching project by Emran Awel &amp; Saron
+              Getahun .
+            </p>
+          </div>
+
+          <div>
+            <h2 class="footer-heading">Navigate</h2>
+            <div class="footer-links">
+              <a href="index.html">Browse Books</a>
+              <a href="./frontend/HTML/add-book.html">Add a Book</a>
+              <a href="./frontend/HTML/about.html">About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./frontend/js/config.js"></script>
+    <script src="./frontend/js/utils.js"></script>
+    <script src="./frontend/js/index.js"></script>
+  </body>
+</html>
