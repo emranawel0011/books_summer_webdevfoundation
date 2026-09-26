@@ -37,14 +37,14 @@ git pull https://github.com/emranawel0011/books_summer_webdevfoundation.git
 
 A tiny REST API for the BookNest teaching project.
 
-| Types         | Their API: methode and endpoint |
+| Types | Their API: methode and endpoint |
 | --- | --- |
-| All books     | GET /api/books                  |
-| One book      | GET /api/books/:id              |
-| Genres        | GET /api/genres                 |
-| Add a book    | POST /api/books                 |
-| Update a book | PUT /api/books/:id              |
-| Remove a book | DELETE /api/books/:id           |
+| All books | GET /api/books |
+| One book | GET /api/books/:id |
+| Genres | GET /api/genres |
+| Add a book | POST /api/books |
+| Update a book | PUT /api/books/:id |
+| Remove a book | DELETE /api/books/:id |
 
 ### API attribution
 
@@ -62,6 +62,8 @@ This API is given from the teacher in the [BookNest API documentation](https://b
 | | layout | the placement of the elements |
 | | responsive | here you decide how it looks in multiple devices |
 | | variables | here we name all values the ia comenly used |
+| Js | all | making the over all website dynamic |
+| --- | --- | --- |
 
 ## Project members and work-devision
 
