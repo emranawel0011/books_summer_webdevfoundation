@@ -38,16 +38,16 @@ function formatPrice(price) {
 }
 
 // Create a safe image URL
-function getCoverImage(book) {
+function getCoverImage(book, assetPrefix = "./frontend/") {
   const cover = book && typeof book.cover === "string" ? book.cover.trim() : "";
 
   if (!cover) {
-    return "./frontend/images/covers/placeholder.svg";
+    return `${assetPrefix}images/covers/placeholder.svg`;
   }
 
   if (/^(?:[a-z][a-z\d+.-]*:|\/)/i.test(cover)) {
     return cover;
   }
 
-  return `./frontend/${cover.replace(/^(?:\.\/)+/, "")}`;
+  return `${assetPrefix}${cover.replace(/^(?:\.\/)+/, "")}`;
 }
